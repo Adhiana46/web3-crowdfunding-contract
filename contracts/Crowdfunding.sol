@@ -29,7 +29,7 @@ contract Crowdfunding {
     ) public returns (uint256) {
         Campaign storage campaign = campaigns[numberOfCampaigns];
 
-        require(_deadline < block.timestamp, "The deadline must be a date in the future");
+        require(campaign.deadline < block.timestamp, "The deadline must be a date in the future");
 
         // Fill campaign
         campaign.owner = _owner;
